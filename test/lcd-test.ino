@@ -1,7 +1,7 @@
-include <LiquidCrystal.h>
+include <LiquidCrystal_I2C.h>
 
 // initialize the library with the numbers of the interface pins
-LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+LiquidCrystal_I2C lcd(0x27,2,16);
 
 void setup() {
   // set up the LCD's number of columns and rows:
