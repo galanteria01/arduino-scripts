@@ -1,1 +1,3 @@
 https://iotdesignpro.com/projects/esp8266-based-webserver-to-control-servo-motor
+
+https://www.edaboard.com/threads/esp8266-weird-response-to-at-commands.343985/
