@@ -1,0 +1,30 @@
+
+body{
+  background-color: #c0fdff;
+}
+
+.container{
+  text-align: center;
+  font-family: 'Merriweather', serif;
+  color: #4a4e69;
+
+}
+
+h1{
+  padding: 2.5rem;
+  font-size: 4rem;
+  color: #0077b6;
+}
+
+h2{
+  padding: 1rem .5rem;
+}
+
+.inputFormContainer{
+  text-align: center;
+  padding: 1rem 1.5rem 1rem 22rem;
+}
+
+.inputForm{
+  padding: 0 .5rem;
+}
