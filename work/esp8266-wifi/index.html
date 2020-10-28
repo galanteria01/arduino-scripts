@@ -2,19 +2,29 @@
 <html>
 <head>
 <title>Web controlled Servo</title>
-<script src="jquery.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+    
+
 <h1> <b> Control Servo Via Web Page</b> </h1>
 
-<div style="margin: 0; width:500px; height:80px;">
+<div>
     <FORM NAME="form" ACTION="" METHOD="GET">
         Enter ESP8266 IP Address:
-        <INPUT TYPE="text" NAME="inputbox" VALUE="192.168.1.254">
+        <INPUT TYPE="text" NAME="inputbox" VALUE="192.168.43.165">
     </FORM>
 </div>
+
 <h3> Scroll it to rotate servo  </h3>
 <input type="range" min="20" max="170" onmouseup="servo1(this.value)" />
+</div>
+  </div>
+  </div>
 </body>
 
 <script>
@@ -27,4 +37,7 @@ function servo1(angle)
     {Connection: close};
 }
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </html>
