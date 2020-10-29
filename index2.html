@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Web controlled Servo</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+
+
+    <h1>MNNIT</h1>
+    <h2> <b> Control Servo Via Web Page</b> </h2>
+
+    <div class="inputFormContainer">
+      <form class="form-inline" name="form" action="" method="GET">
+        Enter ESP8266 IP Address:
+        <div class="input-group mb-3 inputForm">
+
+
+        <input type="text" class="form-control" name="inputbox" value="192.168.43.165">
+        </div>
+      </form>
+    </div>
+
+    <h3> Scroll it to rotate servo </h3>
+    <input type="range" min="20" max="170" onmouseup="servo1(this.value)" />
+
+  </div>
+</body>
+
+<script>
+  $.ajaxSetup({
+    timeout: 1000
+  });
+
+  function servo1(angle) {
+    TextVar = form.inputbox.value;
+    ArduinoVar = "http://" + TextVar + ":80";
+    $.get(ArduinoVar, {
+      "sr1": angle
+    }); {
+      Connection: close
+    };
+  }
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</html>
