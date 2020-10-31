@@ -6,7 +6,8 @@ SoftwareSerial esp(2,3);         //set ESP8266 Receiver pin = 2, and  transmitte
 
 #define DEBUG true                //This will display the ESP8266 messages on Serial Monitor
 
-#define servopin 8              //connect servo on pin 8
+#define servopin 8          //connect servo on pin 8
+
 
 Servo servo1;                        //variable for servo
 
@@ -25,6 +26,9 @@ int maxposition = 160;
 void setup()
 
 {
+  pinMode(led_pin, OUTPUT);
+  
+  digitalWrite(led_pin, LOW);
 
   servo1.attach(servopin);
 
@@ -137,6 +141,9 @@ void loop()
          servo1.detach();
 
       }
+
+      }
+
 
   }
 
