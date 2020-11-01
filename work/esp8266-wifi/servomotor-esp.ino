@@ -8,6 +8,8 @@ SoftwareSerial esp(2,3);         //set ESP8266 Receiver pin = 2, and  transmitte
 
 #define servopin 8          //connect servo on pin 8
 
+#define led_pin 11 //LED is connected to Pin 11 of Arduino
+
 
 Servo servo1;                        //variable for servo
 
@@ -140,6 +142,9 @@ void loop()
 
          servo1.detach();
 
+      }
+      if(valueStr=="ON"){
+        digitalWrite(led_pin, HIGH);
       }
 
       }
