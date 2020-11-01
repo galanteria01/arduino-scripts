@@ -33,7 +33,14 @@
 
     <h3> Scroll it to rotate servo </h3>
     <input type="range" min="20" max="170" onmouseup="servo1(this.value)" />
+    <br>
+
+    <h2> <b> WiFi Controlled LED using Arduino and ESP8266 </b> </h2>
     <input type="button" onmouseup="led"/>
+
+    <h3> Click to toggle LED! </h3>
+    <input type="button" NAME="butname" value="Turn ON LED" />
+    <p>STATUS: LED is OFF!</p>
 
   </div>
 </body>
@@ -52,10 +59,35 @@
       Connection: close
     };
   }
-  function led(){
-    
-  }
+  
 </script>
+<script>
+  $.ajaxSetup({timeout:1000});
+  btn = document.querySelector('input[name="butname"]');
+  txt = document.querySelector('p');
+  btn.addEventListener('click', led1);
+  
+  function led1()
+  {
+    var val1 = 'OFF';
+    if (btn.value === 'Turn OFF LED') 
+    {
+    btn.value = 'Turn ON LED';
+    val1 = 'OFF';
+    txt.textContent = 'STATUS: LED is OFF!';
+    } 
+    else 
+    {
+        btn.value = 'Turn OFF LED';
+      val1 = 'ON';
+        txt.textContent = 'STATUS: LED is ON!';
+    }
+    TextVar = form.inputbox.value;
+    ArduinoVar = "http://" + TextVar + ":80/";
+    $.get( ArduinoVar, {led: val1})	;
+    {Connection: close};
+  }
+  </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
